@@ -52,6 +52,9 @@
 ```
 
 ## Clone este repositório
+```
+git clone git@github.com:iluucasz/api_chat.git
+```
 
 ## Como iniciar o servidor:
 
