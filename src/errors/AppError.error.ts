@@ -1,3 +1,4 @@
+//middleware personalizado para usar nos serviços e mostrar ao cliente
 export class AppError extends Error {
    statusCode: number;
 

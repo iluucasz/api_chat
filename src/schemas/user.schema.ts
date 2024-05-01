@@ -1,5 +1,6 @@
 import z from 'zod';
 
+//schema para validação de corpo
 export const userSchema = z.object({
    id: z.number(),
    firstName: z.string(),

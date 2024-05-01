@@ -17,6 +17,7 @@ import {
 } from '../schemas/user.schema';
 const User = require('../db/models/user.js');
 
+//crud com sequelize
 export class UserService {
    registerUser = async (body: TCreateUser): Promise<TCreateUserReturn> => {
       const hashPassword = await bcrypt.hash(body.password, 10);
@@ -45,12 +46,13 @@ export class UserService {
    };
 
    updateUser = async (body: TCreateUser, id: number): Promise<TUpdateReturn> => {
-      const find = await User.findByPk(id);
-      if (!find) {
+      const user = await User.findByPk(id);
+      if (!user) {
          throw new AppError(404, 'User not Found');
       }
-      const user = await User.update(body, { where: { id } });
-      return updateSchemaReturn.parse(find.dataValues);
+      user.set(body);
+      await user.save();
+      return updateSchemaReturn.parse(user);
    };
 
    deleteUser = async (id: number) => {

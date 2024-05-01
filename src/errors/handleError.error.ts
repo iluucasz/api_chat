@@ -3,6 +3,7 @@ import { ZodError } from 'zod';
 import { JsonWebTokenError } from 'jsonwebtoken';
 import { AppError } from './AppError.error';
 
+//middleware de tratamento de erro global.
 export class HandleErrors {
    static execute (error: Error, _: Request, response: Response, __: NextFunction) {
       if (error instanceof AppError) {

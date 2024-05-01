@@ -1,3 +1,4 @@
+//configuração do sequelize, para que ele reconheça o local dos arquivos
 const path = require("path")
 module.exports = {
   config: path.resolve(__dirname, 'src', 'db', 'config', 'database.js'),
