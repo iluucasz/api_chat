@@ -2,21 +2,30 @@
  esta é uma Api web que usa o socket.io para criar um chat ao vivo. desafio completo de desenvolvedor backend pleno.
 
 # LiveChat API:
-1.para usar o live chat: após realizar as configurações abaixo e inicializar o servidor, basta acessar no navegador a rota raíz GET: /
-2.crie um usuário clicando no botão registrar
-3.faça o login
-4.divirta-se
 
- ## Desafios enfrentados
- .Foi bem divertido construir esta a aplicação, o desafio mais complicado foi configurar o sequelize visto
- .que se trata de uma ORM bem antiga e sou acostumado a usar o prisma que faz a maioria das coisas de forma
- .automática.
- .Outro desafio foi o uso do socket.io, primeira vez usando-o e achei ele bem intuitivo e direto ao ponto.
- .trabalhar com aquilo que não estamos acostumados é sempre um grande desafio, mas o deve tem que está
- .sempre preparado para solucionar problemas, independente da ferramenta que ele vá usar.
- .gostaria de ter trabalho mais neste projeto, documentando ele via swagger, porém não vi necessidade visto
- .que se trata apenas de um crud simples sem interações com várias rotas, além disto a aplicação está utilizando
- .o jest para testar as rotas e os serviços.
+1. **Para usar o live chat:**
+   Após realizar as configurações abaixo e inicializar o servidor, basta acessar no navegador a rota raíz GET: /
+
+2. **Crie um usuário:**
+   Clique no botão registrar para criar um usuário.
+
+3. **Faça o login.**
+
+4. **Divirta-se.**
+
+## Desafios enfrentados
+
+1. **ORM Sequelize:**
+   Foi bem divertido construir esta aplicação. O desafio mais complicado foi configurar o Sequelize, visto que se trata de uma ORM bem antiga e sou acostumado a usar o Prisma, que faz a maioria das coisas de forma automática.
+
+2. **Socket.io:**
+   Outro desafio foi o uso do Socket.io. Foi minha primeira vez usando-o e achei ele bem intuitivo e direto ao ponto.
+
+3. **Trabalhando com tecnologias não familiares:**
+   Trabalhar com o que não estamos acostumados é sempre um grande desafio, mas o dev deve estar sempre preparado para solucionar problemas, independente da ferramenta que ele vá usar.
+
+4. **Documentação e testes:**
+   Gostaria de ter trabalhado mais neste projeto, documentando ele via Swagger, porém não vi necessidade visto que se trata apenas de um CRUD simples sem interações com várias rotas. Além disso, a aplicação está utilizando o Jest para testar as rotas e os serviços.
 
 ### Rotas via insomnia
 
