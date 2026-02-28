@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --runInBand",
-    "dev": "tsnd --respawn src/server.ts"
+    "dev": "tsnd --respawn src/server.ts",
+    "build": "npx tsc",
+    "start": "node dist/server.js",
+    "migrate": "npx sequelize-cli db:migrate"
   },
   "author": "Lucas Santos",
   "license": "ISC",
@@ -16,7 +19,8 @@
     "express-async-errors": "^3.1.1",
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.9.7",
+    "pg": "^8.19.0",
+    "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.3",
     "socket.io": "^4.7.5",
     "zod": "^3.23.4"

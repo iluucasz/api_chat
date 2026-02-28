@@ -70,7 +70,7 @@ btnLogout.addEventListener('click', () => {
 });
 
 /* ── Socket ── */
-const socket = io('http://localhost:3000');
+const socket = io(window.location.origin);
 let typingTimeout;
 
 socket.on('connect', () => {

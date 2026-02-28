@@ -17,7 +17,7 @@ app.use(
       contentSecurityPolicy: {
          directives: {
             defaultSrc: [ "'self'" ],
-            connectSrc: [ "'self'", 'http://localhost:3000', 'ws://localhost:3000' ],
+            connectSrc: [ "'self'", 'ws:', 'wss:' ],
             scriptSrc: [ "'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net', 'https://code.jquery.com' ],
             styleSrc: [ "'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net' ],
             fontSrc: [ "'self'", 'https://cdn.jsdelivr.net' ],
