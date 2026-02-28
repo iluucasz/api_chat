@@ -5,8 +5,8 @@ const config = {
    password: process.env.DB_PASSWORD,
    database: process.env.DB,
    host: process.env.DB_HOST,
-   port: process.env.DB_PORT,
-   dialect: process.env.DB_DIALECT,
+   port: process.env.DB_PORT ? Number(process.env.DB_PORT) : undefined,
+   dialect: process.env.DB_DIALECT || 'mysql',
    define: {
       timestamps: true,
       underscored: true

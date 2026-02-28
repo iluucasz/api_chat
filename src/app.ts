@@ -38,16 +38,39 @@ const io = new SocketIO(server, {
       methods: [ 'GET', 'POST' ]
    }
 });
+
+// Track online users: socketId -> { id, firstName, lastName, email, avatar }
+const onlineUsers = new Map<string, { id: string; firstName: string; lastName: string; email: string }>();
+
+function broadcastOnlineUsers() {
+   const users = Array.from(onlineUsers.entries()).map(([ socketId, user ]) => ({
+      socketId,
+      ...user
+   }));
+   io.emit('online users', users);
+}
+
 io.on('connection', socket => {
    console.log('A user connected:', socket.id);
 
-   // Exemplo de manipulação de evento
+   // Client sends its user info right after connecting
+   socket.on('register user', (user: { id: string; firstName: string; lastName: string; email: string }) => {
+      onlineUsers.set(socket.id, user);
+      broadcastOnlineUsers();
+   });
+
    socket.on('chat message', msg => {
       console.log(`message: ${msg}`);
       io.emit('chat message', msg);
    });
 
+   socket.on('typing', (data) => {
+      socket.broadcast.emit('user typing', data);
+   });
+
    socket.on('disconnect', () => {
-      console.log('user disconnected');
+      console.log('user disconnected:', socket.id);
+      onlineUsers.delete(socket.id);
+      broadcastOnlineUsers();
    });
 });
